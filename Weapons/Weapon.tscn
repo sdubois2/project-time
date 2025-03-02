@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvat4l6ymsfdq"]
+
+[ext_resource type="Script" path="res://Weapons/weapon.gd" id="1_ghw8w"]
+[ext_resource type="PackedScene" uid="uid://dufiyaa7r2vfg" path="res://Projectiles/bullet.tscn" id="2_sbnvk"]
+[ext_resource type="AudioStream" uid="uid://ccb7hsyg5ieo1" path="res://Sounds/sfx/pistolshootshound.mp3" id="3_ytltd"]
+[ext_resource type="AudioStream" uid="uid://b4oesmwomiku3" path="res://Sounds/sfx/reload-123781.mp3" id="4_jqkh0"]
+
+[node name="Weapon" type="Node2D"]
+script = ExtResource("1_ghw8w")
+bullet_scene = ExtResource("2_sbnvk")
+
+[node name="ShootAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ytltd")
+volume_db = -15.0
+
+[node name="ReloadAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jqkh0")
