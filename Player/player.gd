@@ -2,6 +2,7 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $PlayerSprite
 @onready var bullet_scene = preload("res://Projectiles/bullet.tscn")
 @onready var weapon = $Weapon
+@onready var jump_audio: AudioStreamPlayer2D = $JumpAudio
 
 const SPEED = 300.0
 const GRAVITY = 1000.0
@@ -71,6 +72,7 @@ func player_run(delta : float):
 func player_jump(delta : float):
 	
 	if Input.is_action_just_pressed("jump") && jump_ctr == 0:
+		jump_audio.play()
 		jump_ctr+=1
 		velocity.y = JUMP
 		current_state = state.jump
