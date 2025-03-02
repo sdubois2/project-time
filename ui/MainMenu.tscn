@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://u1jstg7g6bra" path="res://Assets/Fonts/dogica/TTF/dogicabold.ttf" id="2_efw24"]
 
 [node name="MainMenu" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_e5j60")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

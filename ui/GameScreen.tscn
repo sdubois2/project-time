@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://odtjv5xappac" path="res://ui/Visual Assets/icons8-pause-12.png" id="1_fc14y"]
 
 [node name="GameScreen" type="CanvasLayer"]
+process_mode = 3
 script = ExtResource("1_26wwf")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
