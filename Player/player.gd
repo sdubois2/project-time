@@ -1,5 +1,6 @@
 extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var weapon = $Weapon
 
 const SPEED = 300.0
 const GRAVITY = 1000.0
@@ -27,20 +28,16 @@ func _physics_process(delta : float):
 func player_shoot(delta):
 	if Input.is_action_just_pressed("shoot"):
 		current_state = state.shoot
+		var muzzle_position = $Muzzle.position;
 		print("is shooting")
-		var bullet = bullet_scene.instantiate()
-		var muzzle_position = $Muzzle.position  # Set bullet spawn position
-		print(muzzle_position)
-		print(global_position)
 		if player_direction > 0:
-			bullet.position = global_position + muzzle_position;
-			bullet.direction = Vector2.RIGHT
+			weapon.muzzle_position = global_position + muzzle_position;
+			weapon.muzzle_direction = Vector2.RIGHT
 		else:
-			bullet.position.y = global_position.y + muzzle_position.y;
-			bullet.position.x = global_position.x - muzzle_position.x;
-			bullet.direction = Vector2.LEFT;
-		get_tree().current_scene.add_child(bullet)  # Add bullet to the scene
-
+			weapon.muzzle_position.y = global_position.y + muzzle_position.y;
+			weapon.muzzle_position.x = global_position.x - muzzle_position.x;
+			weapon.muzzle_direction = Vector2.LEFT;
+		weapon.fire()
 
 func player_falling(delta : float):
 	if !is_on_floor():
