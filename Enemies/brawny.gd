@@ -121,5 +121,7 @@ func _on_timer_timeout() -> void:
 	can_walk = true
 
 
-func _on_hurt_box_area_entered(area: Area2D) -> void:
-	print("area entered")
+
+func _on_hurt_box_body_entered(body: Node2D) -> void:
+	print("its a body!") # Replace with function body.
+	

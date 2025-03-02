@@ -22,16 +22,15 @@ animations = [{
 }]
 
 [node name="Bullet" type="RigidBody2D"]
-collision_layer = 24
-collision_mask = 25
+collision_layer = 4
 mass = 0.05
 gravity_scale = 0.01
 continuous_cd = 1
 contact_monitor = true
-max_contacts_reported = 1
+max_contacts_reported = 2
 script = ExtResource("1_j4h8u")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["bullet"]]
 position = Vector2(-0.5, 0.5)
 shape = SubResource("CircleShape2D_yfaeg")
 
@@ -44,6 +43,15 @@ autostart = true
 sprite_frames = SubResource("SpriteFrames_k6ya7")
 autoplay = "default"
 frame_progress = 0.901956
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["bullet"]]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("CircleShape2D_yfaeg")
+disabled = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="BulletTimeout" to="." method="_on_bullet_timeout_timeout"]
