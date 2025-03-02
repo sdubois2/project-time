@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-@export var speed: float = 2000
+@export var speed: float = 850
 @export var direction: Vector2 = Vector2.RIGHT
 
 func _ready():
