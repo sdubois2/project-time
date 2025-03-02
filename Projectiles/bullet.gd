@@ -9,7 +9,7 @@ func _ready():
 
 
 func _on_body_entered(body):
-	print("impact")
+	#print("impact")
 	queue_free()  # Destroy the bullet on impact
 
 

@@ -19,11 +19,11 @@ var current_weapon_state : weapon_states = weapon_states.idle
 # Fire function
 func fire():
 	if current_weapon_state != weapon_states.idle:
-		print(current_weapon_state)
+		#print(current_weapon_state)
 		return  # Prevent firing if not in idle state
 
 	if bullets_remaining <= 0:
-		print("Out of ammo, reloading!")
+		#print("Out of ammo, reloading!")
 		reload()
 		return  # Prevent firing with zero bullets
 
@@ -37,7 +37,7 @@ func fire():
 	get_tree().current_scene.add_child(bullet)
 
 	bullets_remaining -= 1
-	print("Fired! Bullets left:", bullets_remaining)
+	#print("Fired! Bullets left:", bullets_remaining)
 
 	# Cooldown before next shot
 	current_weapon_state = weapon_states.cooldown
@@ -49,10 +49,10 @@ func reload():
 	if current_weapon_state == weapon_states.reloading or bullets_remaining == magazine_size:
 		return  # Prevent unnecessary reloads
 	
-	print("Reloading...")
+	#print("Reloading...")
 	current_weapon_state = weapon_states.reloading
 	await get_tree().create_timer(reload_time).timeout
 	bullets_remaining = magazine_size
-	print("Reload complete!")
+	#print("Reload complete!")
 
 	current_weapon_state = weapon_states.idle

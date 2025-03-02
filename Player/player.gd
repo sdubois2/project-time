@@ -31,7 +31,7 @@ func player_shoot(delta):
 	if Input.is_action_just_pressed("shoot"):
 		current_state = state.shoot
 		var muzzle_position = $Muzzle.position;
-		print("is shooting")
+		#print("is shooting")
 		if player_direction > 0:
 			weapon.muzzle_position = global_position + muzzle_position;
 			weapon.muzzle_direction = Vector2.RIGHT
