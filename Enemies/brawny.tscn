@@ -129,7 +129,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_b4h16")
 }],
 "loop": true,
-"name": &"run",
+"name": &"walk",
 "speed": 5.0
 }]
 
@@ -144,11 +144,16 @@ script = ExtResource("1_oohlr")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_3yr2q")
-animation = &"death"
-frame = 4
-frame_progress = 0.652017
+animation = &"walk"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -15)
 shape = SubResource("CapsuleShape2D_kkr2x")
 debug_color = Color(0.988235, 0, 0, 0.419608)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

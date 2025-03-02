@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://ccrpa28r6ux0n"]
+[gd_scene load_steps=8 format=4 uid="uid://ccrpa28r6ux0n"]
 
 [ext_resource type="PackedScene" uid="uid://d2lp2hthbm2we" path="res://Player/player.tscn" id="2_2kf6l"]
 [ext_resource type="Texture2D" uid="uid://dgr4vtallvd2c" path="res://tilesets/spaceship.png" id="2_cux3k"]
+[ext_resource type="PackedScene" uid="uid://cjo1k1q0whtta" path="res://Enemies/brawny.tscn" id="3_n3n38"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j4gq5"]
 texture = ExtResource("2_cux3k")
@@ -299,3 +300,15 @@ tile_set = SubResource("TileSet_ceod2")
 position = Vector2(-223, 2)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="Brawny" parent="." node_paths=PackedStringArray("patrol_points") instance=ExtResource("3_n3n38")]
+position = Vector2(1508, 1)
+patrol_points = NodePath("PatrolPoints")
+
+[node name="PatrolPoints" type="Node2D" parent="Brawny"]
+
+[node name="LEFT" type="Marker2D" parent="Brawny/PatrolPoints"]
+position = Vector2(-64, -3)
+
+[node name="RIGHT" type="Marker2D" parent="Brawny/PatrolPoints"]
+position = Vector2(57, -3)
