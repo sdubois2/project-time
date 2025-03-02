@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dq0ymg0cywit5"]
+[gd_scene load_steps=3 format=3 uid="uid://dq0ymg0cywit5"]
 
 [ext_resource type="Script" path="res://ui/pause_menu.gd" id="1_l6np8"]
+[ext_resource type="FontFile" uid="uid://u1jstg7g6bra" path="res://Assets/Fonts/dogica/TTF/dogicabold.ttf" id="2_s78d8"]
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -25,10 +26,12 @@ layout_mode = 2
 
 [node name="ContinueButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_s78d8")
 text = "CONTINUE"
 
 [node name="MainMenuButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_s78d8")
 text = "MAIN MENU
 "
 

@@ -19,5 +19,6 @@ size_flags_horizontal = 8
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.02
 texture_normal = ExtResource("1_fc14y")
+stretch_mode = 0
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
