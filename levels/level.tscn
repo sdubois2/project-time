@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=4 uid="uid://ccrpa28r6ux0n"]
+[gd_scene load_steps=10 format=4 uid="uid://ccrpa28r6ux0n"]
 
 [ext_resource type="PackedScene" uid="uid://d2lp2hthbm2we" path="res://Player/player.tscn" id="2_2kf6l"]
 [ext_resource type="Texture2D" uid="uid://dgr4vtallvd2c" path="res://tilesets/spaceship.png" id="2_cux3k"]
 [ext_resource type="PackedScene" uid="uid://cjo1k1q0whtta" path="res://Enemies/brawny.tscn" id="3_n3n38"]
+[ext_resource type="AudioStream" uid="uid://dbwfsktm7stm8" path="res://Sounds/Music/Theme.mp3" id="4_o03qb"]
+[ext_resource type="PackedScene" uid="uid://dfqobhl3tkihw" path="res://ui/GameScreen.tscn" id="5_v50eu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j4gq5"]
 texture = ExtResource("2_cux3k")
@@ -312,3 +314,9 @@ position = Vector2(-64, -3)
 
 [node name="RIGHT" type="Marker2D" parent="Brawny/PatrolPoints"]
 position = Vector2(57, -3)
+
+[node name="LevelThemeAudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_o03qb")
+autoplay = true
+
+[node name="GameScreen" parent="." instance=ExtResource("5_v50eu")]

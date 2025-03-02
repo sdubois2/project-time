@@ -1,6 +1,6 @@
 extends Node2D  
 @export var bullet_scene : PackedScene 
-
+@onready var bullet_sound  = $AudioStreamPlayer2D
 #Changed on call
 @export var muzzle_position : Vector2 = Vector2(1,1)
 @export var muzzle_direction : Vector2 = Vector2.RIGHT
@@ -35,7 +35,7 @@ func fire():
 	bullet.direction = muzzle_direction
 	bullet.damage = bullet_damage
 	get_tree().current_scene.add_child(bullet)
-
+	bullet_sound.play()
 	bullets_remaining -= 1
 	#print("Fired! Bullets left:", bullets_remaining)
 
