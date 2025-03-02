@@ -305,6 +305,8 @@ position = Vector2(-223, 2)
 
 [node name="Brawny" parent="." node_paths=PackedStringArray("patrol_points") instance=ExtResource("3_n3n38")]
 position = Vector2(1508, 1)
+speed = null
+wait_time = null
 patrol_points = NodePath("PatrolPoints")
 
 [node name="PatrolPoints" type="Node2D" parent="Brawny"]

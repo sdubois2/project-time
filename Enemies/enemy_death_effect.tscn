@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://by8miy15ppc0"]
 
 [ext_resource type="Texture2D" uid="uid://c3c6d4jcjanbd" path="res://Enemies/Brawny.png" id="1_vev6s"]
-[ext_resource type="Script" path="res://enemy_death_effect.gd" id="2_0q10j"]
+[ext_resource type="Script" path="res://Enemies/enemy_death_effect.gd" id="2_0q10j"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_grvor"]
 atlas = ExtResource("1_vev6s")

@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfqobhl3tkihw"]
+
+[ext_resource type="Script" path="res://ui/game_screen.gd" id="1_26wwf"]
+[ext_resource type="Texture2D" uid="uid://odtjv5xappac" path="res://ui/Visual Assets/icons8-pause-12.png" id="1_fc14y"]
+
+[node name="GameScreen" type="CanvasLayer"]
+script = ExtResource("1_26wwf")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 629.0
+offset_bottom = 359.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.02
+texture_normal = ExtResource("1_fc14y")
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
