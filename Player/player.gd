@@ -5,8 +5,7 @@ const SPEED = 300.0
 const GRAVITY = 1000.0
 const JUMP = -400.0
 
-enum state {idle, run, jump, shoot}
-var state_names = ["idle","run","jump","shoot"]
+enum state {idle, run, jump}
 var current_state : state
 
 #func _ready():
@@ -17,21 +16,9 @@ func _physics_process(delta : float):
 	player_idle(delta)
 	player_run(delta)
 	player_jump(delta)
-	player_shoot(delta)
-		
+	
 	move_and_slide()
 	player_animations()
-
-@onready var bullet_scene = preload("res://Projectiles/bullet.tscn")
-
-func player_shoot(delta):
-	if Input.is_action_just_pressed("shoot"):
-		var bullet = bullet_scene.instantiate()
-		current_state = state.shoot;
-		bullet.global_position = $Muzzle.global_position  # Set spawn position
-		bullet.direction = Vector2.RIGHT;
-		print("state:" + state_names[current_state])# Aim at the mouse
-		get_tree().current_scene.add_child(bullet)  # Add bullet to scene
 
 
 func player_falling(delta : float):
@@ -44,8 +31,8 @@ func player_idle(delta : float):
 		current_state = state.idle
 
 
-func player_run(delta : float): 
-	var direction = input_movement()
+func player_run(delta : float):
+	var direction = input_movment()
 	
 	if direction:
 		velocity.x = direction * SPEED
@@ -63,7 +50,7 @@ func player_jump(delta : float):
 		current_state = state.jump
 		
 	if !is_on_floor() and current_state == state.jump:
-		var direction = input_movement()
+		var direction = input_movment()
 		velocity.x += direction * 100 * delta
 
 
@@ -74,6 +61,6 @@ func player_animations():
 		animated_sprite_2d.play("run")
 		
 
-func input_movement():
+func input_movment():
 	var direction : float = Input.get_axis("move_left","move_right")
 	return direction
