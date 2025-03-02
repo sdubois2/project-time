@@ -17,6 +17,7 @@ var point_positions : Array[Vector2]
 var current_point : Vector2
 var current_point_possition : int
 var can_walk : bool
+var health_amount : int = 5
 
 func _ready():
 	if patrol_points != null:
@@ -123,6 +124,15 @@ func _on_timer_timeout() -> void:
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	print("area entered")
+	if area.get_parent().has_method("get_damage_amount"):
+		var node = area.get_parent() as Node
+		health_amount -= node.damage_amount
+		print("Health amount: ", health_amount)
 
 func _on_hurt_box_body_entered(body: Node2D) -> void:
-	print("Son of a bitch that hurt")
+	pass
+	#if body.is_in_group("bullet"):
+		#body.get_damage_amount()
+		#var node = get_parent() as Node
+		#health_amount -= node.damage_amount
+		#print("Health amount: ", health_amount)
