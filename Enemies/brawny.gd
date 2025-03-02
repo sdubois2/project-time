@@ -31,7 +31,8 @@ func _ready():
 			point_positions.append(point.global_position)
 		current_point = point_positions[current_point_possition]
 	else:
-		print("No patrol point")
+		#print("No patrol point")
+		pass
 		
 	timer.wait_time = wait_time
 

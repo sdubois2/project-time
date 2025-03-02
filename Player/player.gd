@@ -24,6 +24,7 @@ func _physics_process(delta : float):
 	player_jump(delta)
 	player_shoot(delta)
 	player_reload(delta)
+	_pause_menu(delta)
 	if weapon.current_weapon_state != weapon.weapon_states.reloading :
 		ammo_counter.update_text(str(weapon.bullets_remaining))
 	elif weapon.current_weapon_state == weapon.weapon_states.reloading :
@@ -32,6 +33,9 @@ func _physics_process(delta : float):
 	move_and_slide()
 	player_animations()
 
+func _pause_menu(delta):
+	if Input.is_action_just_pressed("pause"):
+		GameManager.pause_game()
 
 func player_shoot(delta):
 	if Input.is_action_just_pressed("shoot"):

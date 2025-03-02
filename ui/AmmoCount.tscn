@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxm8pdi35l5u5"]
+[gd_scene load_steps=5 format=3 uid="uid://b583phduds6fb"]
 
 [ext_resource type="Script" path="res://ui/ammo_count.gd" id="1_p4k2x"]
 [ext_resource type="Texture2D" uid="uid://dx88k57u2cxl6" path="res://Assets/GUI/AmmoCount.png" id="2_wno8g"]

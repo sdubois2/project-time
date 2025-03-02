@@ -2,7 +2,6 @@ extends CanvasLayer
 
 
 func _on_continue_button_pressed() -> void:
-	print("pressed")
 	GameManager.continue_game() # Replace with function body.
 	queue_free()
 
