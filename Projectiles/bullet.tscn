@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://dufiyaa7r2vfg"]
+
+[ext_resource type="Script" path="res://Projectiles/bullet.gd" id="1_j4h8u"]
+[ext_resource type="Texture2D" uid="uid://dxqe1udyn75g2" path="res://Projectiles/Sprites/frame1.png" id="2_pbqkv"]
+[ext_resource type="Texture2D" uid="uid://byoacjqgec6r" path="res://Projectiles/Sprites/frame2.png" id="3_o2hrt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yfaeg"]
+radius = 4.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k6ya7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_pbqkv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_o2hrt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bullet" type="RigidBody2D"]
+collision_layer = 24
+collision_mask = 9
+mass = 0.05
+gravity_scale = 0.01
+continuous_cd = 1
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_j4h8u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("CircleShape2D_yfaeg")
+
+[node name="BulletTimeout" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_k6ya7")
+autoplay = "default"
+frame_progress = 0.901956
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="BulletTimeout" to="." method="_on_bullet_timeout_timeout"]

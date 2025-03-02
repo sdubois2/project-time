@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://byoacjqgec6r"
-path="res://.godot/imported/frame2.png-6a2e75a54c3b00a560d0dec3f9653429.ctex"
+uid="uid://c3c6d4jcjanbd"
+path="res://.godot/imported/Brawny.png-c1937e24222af34171f433d62d9e1eaa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Misc/EnemyProjectile/Sprites/frame2.png"
-dest_files=["res://.godot/imported/frame2.png-6a2e75a54c3b00a560d0dec3f9653429.ctex"]
+source_file="res://Enemies/Brawny.png"
+dest_files=["res://.godot/imported/Brawny.png-c1937e24222af34171f433d62d9e1eaa.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqgn27s263xxy"
-path="res://.godot/imported/spaceship_sheet.png-8a38849a382a091af686f0b89d183e6a.ctex"
+uid="uid://dyx38f5h1tdo1"
+path="res://.godot/imported/Enemy.png-b79f39868ec48f15cf79975d3e7f34a0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tilesets/spaceship_sheet.png"
-dest_files=["res://.godot/imported/spaceship_sheet.png-8a38849a382a091af686f0b89d183e6a.ctex"]
+source_file="res://Assets/Characters/Enemy/Enemy.png"
+dest_files=["res://.godot/imported/Enemy.png-b79f39868ec48f15cf79975d3e7f34a0.ctex"]
 
 [params]
 
