@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxqe1udyn75g2"
-path="res://.godot/imported/frame1.png-a177569ce426b2f24f21d4a92b9e221f.ctex"
+uid="uid://byoacjqgec6r"
+path="res://.godot/imported/frame2.png-44af82f89dcf8dbf5ff00c82ee125175.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Misc/EnemyProjectile/Sprites/frame1.png"
-dest_files=["res://.godot/imported/frame1.png-a177569ce426b2f24f21d4a92b9e221f.ctex"]
+source_file="res://Projectiles/Sprites/frame2.png"
+dest_files=["res://.godot/imported/frame2.png-44af82f89dcf8dbf5ff00c82ee125175.ctex"]
 
 [params]
 
