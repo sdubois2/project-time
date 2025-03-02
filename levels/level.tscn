@@ -1,12 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://ccrpa28r6ux0n"]
 [gd_scene load_steps=7 format=4 uid="uid://ccrpa28r6ux0n"]
 
-[ext_resource type="Texture2D" uid="uid://bqgn27s263xxy" path="res://tilesets/spaceship_sheet.png" id="1_hc4ch"]
 [ext_resource type="PackedScene" uid="uid://d2lp2hthbm2we" path="res://Player/player.tscn" id="2_2kf6l"]
 [ext_resource type="Texture2D" uid="uid://dgr4vtallvd2c" path="res://tilesets/spaceship.png" id="2_cux3k"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pxh4j"]
-texture = ExtResource("1_hc4ch")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j4gq5"]
 texture = ExtResource("2_cux3k")
 0:0/0 = 0
@@ -32,8 +28,6 @@ texture = ExtResource("2_cux3k")
 20:0/0 = 0
 21:0/0 = 0
 22:0/0 = 0
-13:1/0 = 0
-15:1/0 = 0
 1:1/0 = 0
 0:2/0 = 0
 1:2/0 = 0
