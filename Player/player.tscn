@@ -152,7 +152,7 @@ animations = [{
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_imo4b")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_5s0rh")
 animation = &"run"

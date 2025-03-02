@@ -1,5 +1,6 @@
 extends CharacterBody2D
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $PlayerSprite
+@onready var bullet_scene = preload("res://Projectiles/bullet.tscn")
 @onready var weapon = $Weapon
 
 const SPEED = 300.0
@@ -9,7 +10,8 @@ const JUMP = -400.0
 enum state {idle, run, jump, shoot}
 var current_state : state
 
-var player_direction
+var player_direction = 1
+var jump_ctr = 0
 #func _ready():
 
 
@@ -19,11 +21,11 @@ func _physics_process(delta : float):
 	player_run(delta)
 	player_jump(delta)
 	player_shoot(delta)
+	player_reload(delta)
 	
 	move_and_slide()
 	player_animations()
 
-@onready var bullet_scene = preload("res://Projectiles/bullet.tscn")
 
 func player_shoot(delta):
 	if Input.is_action_just_pressed("shoot"):
@@ -38,6 +40,10 @@ func player_shoot(delta):
 			weapon.muzzle_position.x = global_position.x - muzzle_position.x;
 			weapon.muzzle_direction = Vector2.LEFT;
 		weapon.fire()
+		
+func player_reload(delta):
+	if Input.is_action_just_pressed("reload"):
+		weapon.reload()
 
 func player_falling(delta : float):
 	if !is_on_floor():
@@ -63,9 +69,14 @@ func player_run(delta : float):
 		
 
 func player_jump(delta : float):
-	if Input.is_action_just_pressed("jump"):
+	
+	if Input.is_action_just_pressed("jump") && jump_ctr == 0:
+		jump_ctr+=1
 		velocity.y = JUMP
 		current_state = state.jump
+		
+	if is_on_floor() and current_state != state.jump:
+		jump_ctr = 0;
 		
 	if !is_on_floor() and current_state == state.jump:
 		var direction = input_movment()
@@ -83,5 +94,4 @@ func input_movment():
 	var direction : float = Input.get_axis("move_left","move_right")
 	if direction != 0:
 		player_direction = direction
-		print(player_direction)
 	return direction

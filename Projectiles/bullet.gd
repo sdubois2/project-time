@@ -1,7 +1,8 @@
 extends RigidBody2D
 
-@export var speed: float = 850
-@export var direction: Vector2 = Vector2.RIGHT
+@export var speed: float = 700
+@export var direction: Vector2 = Vector2.UP
+@export var damage = 15
 
 func _ready():
 	apply_impulse(direction * speed)
