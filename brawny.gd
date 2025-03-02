@@ -123,3 +123,6 @@ func _on_timer_timeout() -> void:
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	print("area entered")
+
+func _on_hurt_box_body_entered(body: Node2D) -> void:
+	print("Son of a bitch that hurt")
