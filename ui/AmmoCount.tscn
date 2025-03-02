@@ -1,13 +1,36 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxm8pdi35l5u5"]
+[gd_scene load_steps=5 format=3 uid="uid://cxm8pdi35l5u5"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2fgt8"]
+[ext_resource type="Script" path="res://ui/ammo_count.gd" id="1_p4k2x"]
+[ext_resource type="Texture2D" uid="uid://dx88k57u2cxl6" path="res://Assets/GUI/AmmoCount.png" id="2_wno8g"]
+[ext_resource type="FontFile" uid="uid://r4dt7k7icuol" path="res://Assets/Fonts/dogica/TTF/dogica.ttf" id="3_t064r"]
+
+[sub_resource type="FontVariation" id="FontVariation_bl5yc"]
+base_font = ExtResource("3_t064r")
+spacing_glyph = -2
 
 [node name="AmmoCount" type="CanvasLayer"]
+script = ExtResource("1_p4k2x")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(550, 318.5)
+texture = ExtResource("2_wno8g")
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer"]
-layout_mode = 2
-theme_override_styles/background = SubResource("StyleBoxTexture_2fgt8")
+[node name="TotalAmmo" type="Label" parent="."]
+offset_left = 497.0
+offset_top = 314.5
+offset_right = 513.0
+offset_bottom = 321.5
+theme_override_fonts/font = SubResource("FontVariation_bl5yc")
+theme_override_font_sizes/font_size = 8
+text = "
+"
+
+[node name="MaxAmmo" type="Label" parent="."]
+offset_left = 513.0
+offset_top = 314.5
+offset_right = 529.0
+offset_bottom = 321.5
+theme_override_fonts/font = SubResource("FontVariation_bl5yc")
+theme_override_font_sizes/font_size = 8
+text = "12
+"

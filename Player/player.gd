@@ -2,6 +2,7 @@ extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $PlayerSprite
 @onready var bullet_scene = preload("res://Projectiles/bullet.tscn")
 @onready var weapon = $Weapon
+@onready var ammo_counter = $AmmoCount
 @onready var jump_audio: AudioStreamPlayer2D = $JumpAudio
 
 const SPEED = 300.0
@@ -23,6 +24,10 @@ func _physics_process(delta : float):
 	player_jump(delta)
 	player_shoot(delta)
 	player_reload(delta)
+	if weapon.current_weapon_state != weapon.weapon_states.reloading :
+		ammo_counter.update_text(str(weapon.bullets_remaining))
+	elif weapon.current_weapon_state == weapon.weapon_states.reloading :
+		ammo_counter.reload_animation()
 	
 	move_and_slide()
 	player_animations()

@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://d2lp2hthbm2we"]
+[gd_scene load_steps=26 format=3 uid="uid://d2lp2hthbm2we"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_imo4b"]
 [ext_resource type="Texture2D" uid="uid://dyyguj5r0gq8r" path="res://Player/Ronny.png" id="2_1ry2t"]
+[ext_resource type="PackedScene" uid="uid://cxm8pdi35l5u5" path="res://ui/AmmoCount.tscn" id="2_bs63p"]
 [ext_resource type="Texture2D" uid="uid://62vmin46law1" path="res://Player/RonnyIdle.png" id="3_vihmw"]
 [ext_resource type="PackedScene" uid="uid://bvat4l6ymsfdq" path="res://Weapons/Weapon.tscn" id="4_26cyt"]
 [ext_resource type="AudioStream" uid="uid://cs4f3tstxdj8" path="res://Sounds/sfx/jump.mp3" id="5_ndxfc"]
@@ -152,6 +153,8 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_imo4b")
+
+[node name="AmmoCount" parent="." instance=ExtResource("2_bs63p")]
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -16)
