@@ -1,6 +1,9 @@
 extends Node2D  
 @export var bullet_scene : PackedScene 
-@onready var bullet_sound  = $AudioStreamPlayer2D
+#@onready var bullet_sound  = $AudioStreamPlayer2D
+@onready var bullet_sound: AudioStreamPlayer2D = $ShootAudio
+@onready var reload_audio: AudioStreamPlayer2D = $ReloadAudio
+
 #Changed on call
 @export var muzzle_position : Vector2 = Vector2(1,1)
 @export var muzzle_direction : Vector2 = Vector2.RIGHT
@@ -52,6 +55,7 @@ func reload():
 	#print("Reloading...")
 	current_weapon_state = weapon_states.reloading
 	await get_tree().create_timer(reload_time).timeout
+	reload_audio.play()
 	bullets_remaining = magazine_size
 	#print("Reload complete!")
 
