@@ -147,6 +147,8 @@ sprite_frames = SubResource("SpriteFrames_3yr2q")
 animation = &"death"
 frame = 3
 frame_progress = 0.613174
+frame = 4
+frame_progress = 0.652017
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -15)
