@@ -4,6 +4,8 @@ var enemy_death_effect = preload("res://Enemies/enemy_death_effect.tscn")
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
+@onready var damage_audio: AudioStreamPlayer2D = $DamageAudio
+@onready var death_audio: AudioStreamPlayer2D = $DeathAudio
 
 @export var patrol_points : Node
 @export var speed : int = 1000
@@ -136,6 +138,7 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 			enemy_death_effect_instance.global_position = global_position
 			get_parent().add_child(enemy_death_effect_instance)
 			queue_free()
+		damage_audio.play()
 
 func _on_hurt_box_body_entered(body: Node2D) -> void:
 	pass

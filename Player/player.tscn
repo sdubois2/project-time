@@ -1,9 +1,10 @@
-[gd_scene load_steps=24 format=3 uid="uid://d2lp2hthbm2we"]
+[gd_scene load_steps=25 format=3 uid="uid://d2lp2hthbm2we"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_imo4b"]
 [ext_resource type="Texture2D" uid="uid://dyyguj5r0gq8r" path="res://Player/Ronny.png" id="2_1ry2t"]
 [ext_resource type="Texture2D" uid="uid://62vmin46law1" path="res://Player/RonnyIdle.png" id="3_vihmw"]
 [ext_resource type="PackedScene" uid="uid://bvat4l6ymsfdq" path="res://Weapons/Weapon.tscn" id="4_26cyt"]
+[ext_resource type="AudioStream" uid="uid://cs4f3tstxdj8" path="res://Sounds/sfx/jump.mp3" id="5_ndxfc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8fu8j"]
 atlas = ExtResource("2_1ry2t")
@@ -165,3 +166,6 @@ position = Vector2(24, -9)
 polygon = PackedVector2Array(6, -27, 11, -22, 11, -14, 7, -11, 6, -5, 3, -4, 3, 0, 2, 0, 2, -4, -2, -4, -2, 0, -3, 0, -3, -4, -6, -5, -6, -11, -12, -17, -12, -22, -8, -27)
 
 [node name="Weapon" parent="." instance=ExtResource("4_26cyt")]
+
+[node name="JumpAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ndxfc")
